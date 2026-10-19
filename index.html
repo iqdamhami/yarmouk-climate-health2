@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="مختبر اليرموك لتقييم قابلية التأثر الصحي بالمناخ والاستعداد للطوارئ - مؤشر خطورة بيئية مبني على أدلة عبء المرض (GBD/Lancet) مع تحديد الأمراض الأكثر تأثرًا. محلي بالكامل.">
+<title>مختبر اليرموك | مؤشر الخطورة البيئية–الصحية</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav"><div class="brand"><span class="logo">Y</span><div><strong id="brand">مختبر اليرموك</strong><small id="brandSub">المناخ والصحة</small></div></div><div class="nav-actions"><button id="themeBtn" class="icon-btn" aria-label="تبديل المظهر">◐</button><button id="langBtn" class="ghost">EN</button></div></div></header>
+<main class="container">
+<section class="hero"><div><span class="eyebrow" id="eyebrow">محلي • الخصوصية أولًا • مبني على أدلة عبء المرض • تقييم متعدد الدول</span><h1 id="heroTitle">مؤشر الخطورة البيئية–الصحية</h1><p id="heroIntro">أداة تفاعلية لحساب مؤشر خطورة بيئية توضيحي (0–100) استنادًا إلى أوزان مستمدة من عبء المرض العالمي (GBD/Lancet)، مع معاملات تعديل للهشاشة والتعرض والقدرة التكيفية، وتحديد الأمراض الأكثر تأثرًا. مصممة لتتوافق مع قائمة جمع البيانات لتقييم قابلية التأثر الصحي بالمناخ (الأردن أساسًا، تونس، الجزائر، لبنان، اليمن، الإمارات). المعالجة محلية بالكامل داخل المتصفح.</p><div class="hero-actions"><button id="sampleBtn" class="primary">تجربة بيانات نموذجية</button><button id="resetBtn" class="secondary">مسح المدخلات</button><button id="printBtn" class="secondary">طباعة / PDF</button></div></div><div class="privacy-card"><span>🔒</span><div><strong id="privacyTitle">الخصوصية أولًا</strong><p id="privacyText">لا توجد قاعدة بيانات أو حسابات أو رفع للبيانات. النتائج تُحسب محليًا في جهازك.</p></div></div></section>
+<section class="grid">
+<div class="panel inputs"><div class="panel-head"><div><h2 id="dataTitle">بيانات التقييم</h2><p id="dataHelp">أدخل القيم المتاحة. المحركات البيئية تُوزن وفق عبء المرض؛ الهشاشة ومدة التعرض وقدرة النظام تُستخدم كمعاملات تعديل.</p></div><span class="badge" id="badge">0–100</span></div>
+<div class="form-grid">
+<label><span id="locationLabel">الموقع / المحافظة</span><input id="location" type="text" placeholder="مثال: إربد"></label>
+<label class="date-range"><span id="dateLabel">الفترة الزمنية</span>
+  <div class="date-inputs">
+    <input id="dateFrom" type="date" aria-label="من تاريخ">
+    <span class="date-sep" id="dateSep">إلى</span>
+    <input id="dateTo" type="date" aria-label="إلى تاريخ">
+  </div>
+</label>
+<label class="indicator-field"><span id="temperatureLabel">درجة الحرارة (°C)</span><input id="temperature" type="number" min="-30" max="60" step="0.1" placeholder="30" aria-describedby="temperatureLevel"><small id="temperatureLevel" class="field-level neutral">مستوى الحرارة: بانتظار الإدخال</small></label>
+<label class="indicator-field"><span id="humidityLabel">الرطوبة النسبية (%)</span><input id="humidity" type="number" min="0" max="100" step="0.1" placeholder="60" aria-describedby="humidityLevel"><small id="humidityLevel" class="field-level neutral">مستوى الرطوبة: بانتظار الإدخال</small></label>
+<label class="indicator-field"><span id="precipLabel">هطول الأمطار (مم)</span><input id="precip" type="number" min="0" max="500" step="0.1" placeholder="5" aria-describedby="precipLevel"><small id="precipLevel" class="field-level neutral">مستوى الهطول: بانتظار الإدخال</small></label>
+<label class="indicator-field"><span id="aqiLabel">جودة الهواء AQI / PM2.5</span><input id="aqi" type="number" min="0" max="500" step="1" placeholder="80" aria-describedby="aqiLevel"><small id="aqiLevel" class="field-level neutral">مستوى جودة الهواء: بانتظار الإدخال</small></label>
+<label class="indicator-field"><span id="healthLabel">المؤشر الصحي (حالات/10,000)</span><input id="health" type="number" min="0" max="1000" step="0.1" placeholder="20" aria-describedby="healthLevel"><small id="healthLevel" class="field-level neutral">مستوى المؤشر الصحي: بانتظار الإدخال</small></label>
+<label class="vulnerability-field"><span id="vulnerabilityLabel">هشاشة السكان (%)</span><input id="vulnerability" type="number" min="0" max="100" step="0.1" placeholder="25" aria-describedby="vulnerabilityLevel"><small id="vulnerabilityLevel" class="field-level neutral">مستوى الهشاشة: بانتظار الإدخال</small></label>
+<label class="indicator-field"><span id="exposureLabel">مدة التعرض (أيام)</span><input id="exposure" type="number" min="0" max="30" step="1" placeholder="1" aria-describedby="exposureLevel"><small id="exposureLevel" class="field-level neutral">مستوى التعرض: بانتظار الإدخال</small></label>
+<label class="indicator-field"><span id="capacityLabel">قدرة النظام الصحي / الاستعداد (%)</span><input id="capacity" type="number" min="0" max="100" step="0.1" placeholder="60" aria-describedby="capacityLevel"><small id="capacityLevel" class="field-level neutral">مستوى القدرة: بانتظار الإدخال</small></label>
+</div>
+<p class="field-note" id="fieldNote">المؤشر الصحي يُستخدم للتحقق والحساسية المحلية (ليس وزنًا أساسيًا). الهشاشة تشمل الأطفال دون 5، كبار السن، الحوامل، اللاجئين/النازحين، العمال الخارجيين، ذوي الأمراض المزمنة. القدرة تشمل المستشفيات، الأسرة، القوى العاملة، أنظمة الإنذار، خطط الاستعداد.</p>
+<div id="errors" class="errors" role="alert" aria-live="polite" tabindex="-1"></div><button id="calcBtn" class="primary full">احسب مؤشر الخطورة</button></div>
+<div class="panel result" id="resultPanel"><div class="panel-head"><div><h2 id="resultTitle">النتيجة</h2><p id="resultSubtitle">أدخل البيانات ثم اضغط «احسب مؤشر الخطورة».</p></div></div><div class="score-wrap"><div class="score-ring" id="scoreRing"><div><strong id="score">—</strong><span>/ 100</span></div></div><div><div id="level" class="level neutral">بانتظار التقييم</div><p id="summary">سيظهر هنا ملخص النتيجة والتفسير.</p></div></div>
+<div class="breakdown" id="breakdown" hidden>
+  <h3 id="breakdownTitle">تفكيك المساهمات</h3>
+  <div class="factors" id="factors"></div>
+  <div class="modifiers" id="modifiers"></div>
+</div>
+<div id="vulnerabilityInterpretation" class="vulnerability-interpretation" hidden></div>
+<div class="recommendations" id="recommendations"><h3 id="generalTitle">إرشادات عامة</h3><p id="generalText">استخدم المؤشر كأداة فرز واستكشاف، وليس كتشخيص طبي أو تنبؤ مؤكد.</p></div>
+<section class="conditions" id="conditions" aria-live="polite"><div class="conditions-head"><div><h3 id="conditionsTitle">الأمراض والحالات الأكثر تأثرًا</h3><p id="conditionsIntro">حالات مرتبطة بالمحركات البيئية المدخلة وفق عتبات علمية. ليست تشخيصًا فرديًا.</p></div><span class="conditions-badge" id="conditionsBadge">مرتبطة بالمؤشرات</span></div><div id="conditionsList" class="conditions-list"><p class="conditions-empty" id="conditionsEmpty">ستظهر الحالات ذات الصلة بعد حساب المؤشر.</p></div></section></div>
+</section>
+<section class="panel methodology"><div class="panel-head"><div><h2 id="methodologyTitle">كيف يُحسب المؤشر؟</h2><p id="methodologyHelp">نموذج مبني على أوزان عبء المرض البيئي (GBD/Lancet) مع معاملات تعديل للهشاشة والتعرض والقدرة. قابل للمعايرة محليًا.</p></div></div>
+<div class="formula-box" id="formulaBox"><strong>المعادلة:</strong> درجة الخطر الأساسية = (جودة الهواء × 35%) + (الحرارة/الإجهاد الحراري × 25%) + (الهطول/التطرفات × 12%) + (الرطوبة كمعدل × 8%) + (حساسية المؤشر الصحي × 10%) + (مساهمة تقديرية أخرى × 10%). ثم تُطبَّق معاملات التعديل: × معامل الهشاشة (1.0–1.5) × معامل مدة التعرض (1.0–1.25، سقف 7 أيام) × معامل تخفيف القدرة (0.70–1.0). النتيجة النهائية محصورة بين 0 و100.</div>
+<div class="method-grid" id="methodGrid">
+<div><b>35%</b><span id="airWeight">جودة الهواء (PM2.5/AQI)</span></div>
+<div><b>25%</b><span id="heatWeight">الحرارة / التغير المناخي</span></div>
+<div><b>12%</b><span id="precipWeight">الهطول / التطرفات</span></div>
+<div><b>8%</b><span id="humidityWeight">الرطوبة (معدل)</span></div>
+<div><b>10%</b><span id="healthWeight">حساسية المؤشر الصحي</span></div>
+<div><b>—</b><span id="vulnerabilityWeight">هشاشة (معامل تضخيم)</span></div>
+<div><b>—</b><span id="capacityWeight">قدرة النظام (معامل تخفيف)</span></div>
+</div>
+<p class="note" id="methodNote">الأوزان الأساسية مستمدة من مساهمة تلوث الهواء والتغير المناخي في عبء المرض العالمي (GBD 2021 / Lancet Countdown). الهشاشة ومدة التعرض وقدرة النظام الصحي تُستخدم كمعاملات تعديل وليست أوزانًا أساسية متوازية. النموذج توضيحي ويجب معايرته ببيانات محلية قبل أي استخدام تشغيلي.</p>
+<h3 class="subsection-title" id="termsTitle">تعريف المصطلحات والمؤشرات</h3>
+<p class="terms-intro" id="termsIntro">يوضح الجدول معنى كل مصطلح وكيفية استخدامه في النموذج. «الدرجة 0–100» قيمة نموذج وليست تصنيفًا رسميًا بالضرورة.</p>
+<div class="table-wrap"><table class="indicator-table"><thead><tr><th id="termCol">المصطلح</th><th id="definitionCol">التعريف</th><th id="unitCol">الوحدة / المجال</th><th id="ruleCol">قاعدة التحويل / الدور</th><th id="weightCol">الوزن / الدور</th></tr></thead><tbody id="indicatorTableBody"></tbody></table></div>
+</section>
+<section class="panel guide"><h2 id="guideTitle">تفسير النتيجة</h2><div class="legend"><div><i class="low"></i><b>0–29</b><span id="lowLabel">منخفض</span></div><div><i class="moderate"></i><b>30–59</b><span id="moderateLabel">متوسط</span></div><div><i class="high"></i><b>60–79</b><span id="highLabel">مرتفع</span></div><div><i class="critical"></i><b>80–100</b><span id="criticalLabel">مرتفع جدًا</span></div></div></section>
+<section class="panel checklist-ref"><h2 id="checklistTitle">مرجع فئات جمع البيانات</h2><p id="checklistIntro">يتوافق هذا النموذج مع قائمة جمع البيانات لتقييم قابلية التأثر الصحي بالمناخ والاستعداد للطوارئ (Phase 1). الفئات الرئيسية:</p>
+<ul id="checklistList" class="checklist-list">
+<li><strong>1–2:</strong> السكان، التركيبة العمرية والجنسية، الهشاشة الاجتماعية والاقتصادية، اللاجئون والنازحون</li>
+<li><strong>3–4:</strong> المناخ (حرارة، هطول، موجات حر، جفاف، فيضانات)، جودة الهواء، جودة المياه، العواصف الرملية</li>
+<li><strong>5–12:</strong> النتائج الصحية الحساسة للمناخ (حرارة، تنفسية، إسهالية، منقولة بالنواقل، تغذية، مهنية، نفسية، حيوانية المنشأ)</li>
+<li><strong>13–16:</strong> النظام الصحي (مرافق، قوى عاملة، حجم الخدمات، أنظمة الترصد)</li>
+<li><strong>17–19، 26:</strong> أنظمة الإنذار، خطط الاستعداد، البرامج والسياسات، سلاسل التوريد، التدريب</li>
+<li><strong>20–25:</strong> تقييمات سابقة، بيانات جغرافية، بيانات نوعية (مقابلات، مجموعات نقاش)</li>
+</ul>
+</section>
+</main>
+<footer><div class="container"><strong>Yarmouk Climate & Health Lab</strong><span id="footerText">نسخة MVP محلية — أوزان مستمدة من عبء المرض (GBD/Lancet) — متوافقة مع قائمة جمع البيانات — لا تخزن البيانات مركزيًا.</span></div></footer>
+<script src="app.js"></script>
+</body>
+</html>
